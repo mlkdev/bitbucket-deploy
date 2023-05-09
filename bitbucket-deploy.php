@@ -557,7 +557,7 @@
 
 	}
 
-	function BitbucketDeploy_AdminInit() {
+	add_action( 'admin_init', function() {
 
 		// Register a group of settings...
 		register_setting( 'bitbucket-deploy', 'BitbucketDeploy_Options' );
@@ -780,10 +780,9 @@
 		register_activation_hook( __FILE__, [ $BitbucketDeploy, 'flush_transients' ] );
 		register_deactivation_hook( __FILE__, [ $BitbucketDeploy, 'flush_transients' ] );
 
-	}
-	add_action( 'admin_init', 'BitbucketDeploy_AdminInit' );
+	} );
 
-	function BitbucketDeploy_AdminMenu() {
+	add_action( 'admin_menu', function() {
 
 		add_submenu_page(
 			'options-general.php',
@@ -806,5 +805,4 @@
 			}
 		);
 
-	}
-	add_action( 'admin_menu', 'BitbucketDeploy_AdminMenu' );
+	} );
