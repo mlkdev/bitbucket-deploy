@@ -74,6 +74,8 @@ In order for the Bitbucket Deploy plugin to observe private repositories, it nee
 
 Now that an application and password combination exist in Bitbucket with the privileges we need to begin pulling down updates for themes and plugins, we need to first tell the plugin what those credentials actually are.
 
+_There is a known issue with how Bitbucket rate-limits application password API requests. The rate limit can quickly be consumed by some setups. An update is currently being worked on to allow for on-demand update checks, rather than through the transient interface._
+
 ## Configuring the Bitbucket Deploy Plugin
 
 1. Sign into the desired WordPress installation where the Bitbucket Deploy plugin is installed.
